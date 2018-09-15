@@ -15,7 +15,7 @@ const Send = (toEmail, toName, subject, message, callback) => {
     subject = typeof(subject) === 'string' && subject.trim().length > 0 ? subject.trim() : false;
     message = typeof(message) === 'string' && message.trim().length > 0 ? message.trim() : false;
     
-    if (toEmail && toName && message) {
+    if (toEmail && toName && subject && message) {
         // Configure the request payload
         const payload = {
             'from'    : 'Pizza App <postmaster@sandbox.mailgun.org>',
@@ -58,7 +58,6 @@ const Send = (toEmail, toName, subject, message, callback) => {
             callback(e);
         });
 
-        console.log('stringPayload', stringPayload)
         // Add the payload
         req.write(stringPayload);
 
