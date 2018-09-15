@@ -13,11 +13,9 @@ const routes = (data, callback) => {
 }
 
 /**
- * Users - get
+ * itemsMenu - get
  * Required data: userId
  * Optionsal data: none
- * @TODO Only let an authenticate user gat to the data
- *       Don't let the user access anybody elses
  * @param {} data 
  * @param {*} callback 
  */
@@ -46,7 +44,7 @@ const getItemsList = (data, callback) => {
             });
             callback(200)
         } else {
-            callback(404, {Error: 'cart not found'})
+            callback(404, {Error: 'items file not found'})
         }
     })
 } 
