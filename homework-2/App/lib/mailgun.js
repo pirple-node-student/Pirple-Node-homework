@@ -18,7 +18,7 @@ const Send = (toEmail, toName, subject, message, callback) => {
     if (toEmail && toName && message) {
         // Configure the request payload
         const payload = {
-            'from'    : 'Pizza App <postmaster@sandbox07e8f231a5794a128a7e8facf624870f.mailgun.org>',
+            'from'    : 'Pizza App <postmaster@sandbox.mailgun.org>',
             'to'      : toEmail,
             'subject' : subject,
             'text'    : message
@@ -32,7 +32,7 @@ const Send = (toEmail, toName, subject, message, callback) => {
             'protocol' : 'https:',
             'hostname' : 'api.mailgun.net',
             'method'   : 'POST',
-            'path'     : '/v3/sandbox07e8f231a5794a128a7e8facf624870f.mailgun.org/messages',
+            'path'     : '/v3/sandbox.mailgun.org/messages',
             'auth'     : config.mailgunCredential,
             'headers'  : {
                 'Content-type'   : 'application/x-www-form-urlencoded',
