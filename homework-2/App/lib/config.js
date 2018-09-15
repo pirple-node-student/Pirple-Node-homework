@@ -1,10 +1,6 @@
 /**
  * 
  * create/export environment vars
- * process.env.TWILIO_ACCOUNT_SID      accountSid: 'AC31e43eac677977230a3fedbfb5c70ed6',
- * process.env.TWILIO_AUTH_TOKEN        authToken:  '95824b3fa5add0befc86531dbcad0367',
- * process.env.TWILIO_FROM_PHONE_NUMBER fromPhone: '+16788469550'
- * process.env.TWILIO_PHONE_NUMBER             To: '+16787698459'
  * 
  */
 const environments = {
@@ -15,12 +11,12 @@ const environments = {
         envName:    'staging',
         hashSecret: 'thisIsASecret',
         twilio: {
-            accountSid: 'AC31e43eac677977230a3fedbfb5c70ed6',
-            authToken:  '95824b3fa5add0befc86531dbcad0367',
-            fromPhone:  '+16788469550'
+            accountSid: '',
+            authToken:  '',
+            fromPhone:  ''
         },
-        mailgunCredential: 'api:f282162ad8bd79eaca40587607ecd5f1-7bbbcb78-926a25b8',
-        stripeChargeCredential: 'sk_test_HcHTN8aQqiaTdLkxKAhGXt9Y',
+        mailgunCredential: '',
+        stripeChargeCredential: '',
     },
     production:{
         httpPort:   5000,
@@ -33,8 +29,8 @@ const environments = {
             authToken:  process.env.TWILIO_AUTH_TOKEN,
             fromPhone:  process.env.TWILIO_FROM_PHONE_NUMBER
         },
-        mailgunCredential:      'api:7bbbcb78-926a25b8',
-        stripeChargeCredential: 'sk_test_HcHTN8aQqiaTdLkxKAhGXt9Y',
+        mailgunCredential:      '',
+        stripeChargeCredential: '',
     }
 }
     
