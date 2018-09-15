@@ -38,7 +38,7 @@ const post = (data, callback) => {
 
 const createOrder = (data, callback) => {
 
-    // Get the token from the headers
+    // Get the emal from the payload
     const {email} = data.payload
 
     const _email = typeof(email) == 'string'  && email.trim().length   > 0 ? email.trim() : false
@@ -51,19 +51,18 @@ const createOrder = (data, callback) => {
 
         if (!err && userData) {
 
+            // extract the items array
             const {items} = userData
 
-            // extract the items array
-            let cartItems = typeof(items) == 'object' && items instanceof Array ? items : [];
+            const cartItems = typeof(items) == 'object' && items instanceof Array ? items : [];
 
             if (cartItems.length > 0) {
                 // Get item prices
                 let totalAmount = 0;
 
                 cartItems.map( cartItem => {
-                        // Calculates the total of this item based on the quantity
+                    // Calculates the total of this item based on the quantity
                     totalAmount += cartItem.price * cartItem.qty;
-                    console.log('cartItem', cartItem)
                 });
 
                 console.log('totalamount', totalAmount)
